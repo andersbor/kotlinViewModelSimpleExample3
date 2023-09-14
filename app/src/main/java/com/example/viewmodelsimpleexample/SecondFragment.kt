@@ -27,11 +27,13 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.name.observe(viewLifecycleOwner)
-        { name -> binding.textviewName.text = name }
+        viewModel.name.observe(viewLifecycleOwner) { name ->
+            binding.textviewName.text = name
+        }
 
-        viewModel.age.observe(viewLifecycleOwner)
-        { age -> binding.textviewAge.text = age.toString() }
+        viewModel.age.observe(viewLifecycleOwner) { age ->
+            binding.textviewAge.text = age.toString()
+        }
 
         binding.buttonSecond.setOnClickListener {
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
